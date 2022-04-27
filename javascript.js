@@ -1,90 +1,89 @@
-let producto = prompt('Ingrese el producto que desea comprar. LAPTOP ó DESKTOP')
+let seleccion = prompt('Seleccione un articulo para comprar \n \n 1- Celular \n 2- Tablet \n 3- Smart Watch \n')
 
-const iva = 19 / 100;
+    switch (seleccion.toLowerCase()) {
+        case '1': {
+            class Producto {
+                constructor(articulo, precio, iva) {
 
-    const laptop = [
-        nombreProducto = 'Laptop',
-        precio = 500,
-        ivaProducto = iva,
-        descuento = 0.10
-
-    ]
-
-    const desktop = [
-        nombreProducto = 'Desktop',
-        precio = 300,
-        ivaProducto = iva,
-        descuento = 0.05
-    ] 
-
-
-function compra() {
-
-    let compraProducto = producto;
-
-    switch (producto.toLowerCase()) {
-        case 'laptop':
-                
-            alert('vas a comprar un ' + laptop[0]);
-                
-                let detalleLaptop = prompt ('desea ver el detalle de su compra? SÍ o NO? ');
-
-                detalleCompra = detalleLaptop.toLowerCase();
-
-                if ( detalleLaptop == 'si') {
-
-                    function detalleValor() {
-
-                        let valor = (laptop[1] * laptop[2]) + laptop[1]  ;
-
-                        alert('Vas a comprar un ' + laptop[0] + ' por un valor de ' + laptop[1] + ' + ' + ((laptop[2] * 100 ) + ' % de IVA') + ' por un total de ' + valor + ' incluido IVA');
-                        
-                    }
-                    
-                    detalleValor();
-
-                } else {
-
-                    console.log('Puedes ir a realizar el pago');
-                    alert('Puedes ir a realizar el pago');
+                    this.articulo = articulo;
+                    this.precio = precio;
+                    this.iva = iva;
 
                 }
-                
-            break;
-        case 'desktop':
-            alert('vas a comprar un ' + desktop[0]);
-                
-                let detalleDesktop = prompt ('desea ver el detalle de su compra? SÍ o NO? ');
 
-                detalleCompra = detalleDesktop.toLowerCase();
+                total() {
+                    alert('El valor del ' + this.articulo + ' es de: ' + this.precio + " pesos." + "\nIva de 21%: " + (this.precio * this.iva) + " pesos. " + "\nTotal: " + (this.precio + (this.precio * this.iva)) + " pesos.") ;
+                }
+            }
 
-                if ( detalleDesktop == 'si') {
+            const articulo = new Producto('Celular', 30000, 0.21);
 
-                    function detalleValor() {
+            articulo.total();
 
-                        let valor = (desktop[1] * desktop[2]) + desktop[1]  ;
-
-                        alert('Vas a comprar un ' + desktop[0] + ' por un valor de ' + desktop[1] + ' + ' + ((desktop[2] * 100 ) + ' % de IVA') + ' por un total de ' + valor + ' incluido IVA');
-                        
-                    }
-                    
-                    detalleValor();
-
-                } else {
-
-                    console.log('Puedes ir a realizar el pago');
-                    alert('Puedes ir a realizar el pago');
-
-                }        break;
-    
-        default:
-            alert('Solo vendemos laptops o desktops. por favor ingresa una opción. ');
-
-            break;
+            console.log(articulo);
         }
 
-    return compraProducto
-    
-}
+        break;
 
-compra();
+        case '2':
+
+        {
+
+            class Producto {
+                constructor(articulo, precio, iva) {
+
+                    this.articulo = articulo;
+                    this.precio = precio;
+                    this.iva = iva;
+
+                }
+
+                total() {
+                    alert('El valor del ' + this.articulo + ' es de: ' + this.precio + " pesos." + "\nIva de 21%: " + (this.precio * this.iva) + " pesos. " + "\nTotal: " + (this.precio + (this.precio * this.iva)) + " pesos.") ;
+                }
+            }
+
+            const articulo = new Producto('Tablet', 33000, 0.21);
+
+            articulo.total();
+
+            console.log(articulo);
+        }
+        break;
+
+        case '3':
+
+        {
+            class Producto {
+                constructor(articulo, precio, iva) {
+
+                    this.articulo = articulo;
+                    this.precio = precio;
+                    this.iva = iva;
+
+                }
+
+                total() {
+                    alert('El valor del ' + this.articulo + ' es de: ' + this.precio + " pesos." + "\nIva de 21%: " + (this.precio * this.iva) + " pesos. " + "\nTotal: " + (this.precio + (this.precio * this.iva)) + " pesos.") ;
+                }
+            }
+
+            const articulo = new Producto('Smart watch', 6500, 0.21);
+
+            articulo.total();
+
+            console.log(articulo);
+        }
+        break;
+
+        default:
+            alert("lo ingresado no es valido");
+            break;
+            
+            
+
+            
+    }
+    
+
+
